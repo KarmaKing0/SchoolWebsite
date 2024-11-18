@@ -1,4 +1,4 @@
-:root {
+:root { 
   --primary-color: #3498db;
   --info-color: #8e44ad;
   --success-color: #2ecc71;
@@ -20,7 +20,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: 200px; /* Adjust width as needed */
+  width: 200px;
   height: 100vh;
   background-color: #333;
   padding-top: 20px;
@@ -56,7 +56,7 @@ body {
   transition: left 0.6s;
 }
 
-/* Color each item manually */
+
 .side-nav ul li:nth-child(1) a { --menu-link-active-color: var(--primary-color); }
 .side-nav ul li:nth-child(2) a { --menu-link-active-color: var(--info-color); }
 .side-nav ul li:nth-child(3) a { --menu-link-active-color: var(--success-color); }
@@ -65,8 +65,9 @@ body {
 .side-nav ul li:nth-child(6) a { --menu-link-active-color: var(--primary-color); }
 .side-nav ul li:nth-child(7) a { --menu-link-active-color: var(--info-color); }
 .side-nav ul li:nth-child(8) a { --menu-link-active-color: var(--success-color); }
+.side-nav ul li:nth-child(8) a { --menu-link-active-color: var(--warning-color); }
 
-/* Add hover effects */
+
 .side-nav li:hover::before {
   left: calc(100% + 1rem);
 }
@@ -76,7 +77,7 @@ body {
 }
 
 .main-content {
-  margin-left: 220px; /* Adjust to the side-nav width */
+  margin-left: 220px; 
   padding: 20px;
 }
 
