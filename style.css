@@ -1,69 +1,82 @@
-body {
-    background-color: black;
-    color: purple;
-  }
+:root {
+  --primary-color: #3498db;
+  --info-color: #8e44ad;
+  --success-color: #2ecc71;
+  --warning-color: #f1c40f;
+  --danger-color: #e74c3c;
+  --grey-color: #7f8c8d;
+}
 
-ul {
-  list-style-type: none;
+body {
   margin: 0;
   padding: 0;
-  width: 200px;
-  background-color: #f1f1f1;
-}
-
-li a {
-  display: block;
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-}
-
-
-li a:hover {
-  background-color: #555;
+  display: flex;
+  min-height: 100vh;
+  background: black;
   color: white;
 }
 
-/* The side navigation menu */
-.sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: 0;
-  background-color: #111; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-}
-
-/* The navigation menu links */
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-  position: absolute;
+.side-nav {
+  position: fixed;
   top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
+  left: 0;
+  width: 200px; /* Adjust width as needed */
+  height: 100vh;
+  background-color: #333;
+  padding-top: 20px;
 }
 
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-  transition: margin-left .5s;
+.side-nav ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.side-nav li {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.side-nav a {
+  text-decoration: none;
+  position: relative;
+  color: var(--grey-color);
+  padding: 10px 20px;
+  display: block;
+  transition: color 0.3s, background-size 0.45s 0.04s;
+}
+
+.side-nav li::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: -1rem;
+  width: 0.25rem;
+  height: 100%;
+  transition: left 0.6s;
+}
+
+/* Color each item manually */
+.side-nav ul li:nth-child(1) a { --menu-link-active-color: var(--primary-color); }
+.side-nav ul li:nth-child(2) a { --menu-link-active-color: var(--info-color); }
+.side-nav ul li:nth-child(3) a { --menu-link-active-color: var(--success-color); }
+.side-nav ul li:nth-child(4) a { --menu-link-active-color: var(--warning-color); }
+.side-nav ul li:nth-child(5) a { --menu-link-active-color: var(--danger-color); }
+.side-nav ul li:nth-child(6) a { --menu-link-active-color: var(--primary-color); }
+.side-nav ul li:nth-child(7) a { --menu-link-active-color: var(--info-color); }
+.side-nav ul li:nth-child(8) a { --menu-link-active-color: var(--success-color); }
+
+/* Add hover effects */
+.side-nav li:hover::before {
+  left: calc(100% + 1rem);
+}
+
+.side-nav li:hover a {
+  color: var(--menu-link-active-color);
+}
+
+.main-content {
+  margin-left: 220px; /* Adjust to the side-nav width */
   padding: 20px;
 }
+
